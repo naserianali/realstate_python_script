@@ -10,7 +10,9 @@ class ApartmentSell(BaseModel, Apartment, Sell):
 
 
 class ApartmentRent(BaseModel, Apartment, Rent):
-    pass
+    def show_banner(self):
+        print(
+            f"initial_price= {self.initial_price} monthly_price= {self.monthly_price} discountable= {self.discountable} convertable= {self.convertable}")
 
 
 class HouseSell(BaseModel, House, Sell):
@@ -19,7 +21,9 @@ class HouseSell(BaseModel, House, Sell):
 
 
 class HouseRent(BaseModel, House, Rent):
-    pass
+    def show_banner(self):
+        print(
+            f"initial_price= {self.initial_price} monthly_price= {self.monthly_price} discountable= {self.discountable} convertable= {self.convertable}")
 
 
 class StoreSell(BaseModel, Store, Sell):
@@ -28,4 +32,6 @@ class StoreSell(BaseModel, Store, Sell):
 
 
 class StoreRent(BaseModel, Store, Rent):
-    pass
+    def show_banner(self):
+        print(
+            f"initial_price= {self.initial_price} monthly_price= {self.monthly_price} discountable= {self.discountable} convertable= {self.convertable}")

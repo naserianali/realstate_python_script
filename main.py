@@ -40,4 +40,4 @@ if __name__ == '__main__':
     apartment_sell.show_banner()
 
 
-    print(apartment_sell.manager.search(area=80))
+    print(apartment_sell.manager.search(price_per_meter__min=100000))
