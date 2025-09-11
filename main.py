@@ -28,9 +28,6 @@ if __name__ == '__main__':
     store = Store(user=User.object_list[1], area=40, room_count=1, built_year=2015,
                   region=r1, address="Street 3")
 
-    apt.show_description()
-    house.show_description()
-    store.show_description()
     print(store.user.full_name)
 
     apartment_sell = ApartmentSell(
@@ -39,4 +36,4 @@ if __name__ == '__main__':
         has_parking=False, floor=3, price_per_meter=100000,
         discountable=True, convertable=False
     )
-    print(apartment_sell.show_banner())
+    apartment_sell.show_banner()
