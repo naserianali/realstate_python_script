@@ -1,13 +1,17 @@
 from abc import ABC
 
+from Manager import Manager
+
 
 class BaseModel(ABC):
     _id = 0
     object_list = None
+    manager = None
 
     def __init__(self, *args, **kwargs):
         self.id = self.generate_id()
         self.store(self)
+        self.set_manager()
         super().__init__(*args, **kwargs)
 
     @classmethod
@@ -20,3 +24,8 @@ class BaseModel(ABC):
         if cls.object_list is None:
             cls.object_list = list()
         cls.object_list.append(obj)
+
+    @classmethod
+    def set_manager(cls):
+        if cls.manager is None:
+            cls.manager = Manager(cls)

@@ -1,4 +1,5 @@
 from random import choice
+from wsgiref.util import application_uri
 
 from Estate import Apartment, House, Store
 from Rejon import Rejon
@@ -37,3 +38,6 @@ if __name__ == '__main__':
         discountable=True, convertable=False
     )
     apartment_sell.show_banner()
+
+
+    print(apartment_sell.manager.search(area=80))
